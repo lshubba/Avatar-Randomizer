@@ -68,6 +68,12 @@ body {
 }
 .footer {
     grid-area: footer;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-right: auto;
+    font-family:  'Robotaur', sans-serif;
+    color: white;
     /*border: 1px yellow solid;*/
 }
 
@@ -87,6 +93,10 @@ body {
     margin-left: 30px;
     margin-bottom: auto;
     margin-right: auto;
+}
+
+input {
+    margin-bottom: 10px;
 }
 
 .container {
@@ -155,7 +165,7 @@ body {
     border: 2px solid #6c0a4e;
     border-radius: 0%;
     box-shadow: 0 7px rgb(14, 7, 54);
-    margin-top: 20px;
+    margin-top: 27px;
 }
 
 .button2:hover {
@@ -163,6 +173,35 @@ body {
 }
 
 .button2:active {
+    background-color: rgb(11, 89, 85);
+    box-shadow: 0 5px rgb(14, 7, 54);
+    transform: translateY(4px);
+}
+
+a {
+    display: inline-block;
+    align-items: center;
+    padding: 6px 25px;
+    height: 27px;
+    font-size: 23px;
+    font-family: 'Robot Reavers', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(9, 118, 112);
+    border: 2px solid #6c0a4e;
+    border-radius: 0%;
+    box-shadow: 0 7px rgb(14, 7, 54);
+    margin-top: 27px;
+}
+
+a:hover {
+    background-color: rgb(11, 89, 85)
+}
+
+a:active {
     background-color: rgb(11, 89, 85);
     box-shadow: 0 5px rgb(14, 7, 54);
     transform: translateY(4px);
