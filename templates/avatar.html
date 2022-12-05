@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <link href="https://fonts.cdnfonts.com/css/robotaur" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/robot-reavers" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Random Avatar Generator</title>
 </head>
 <body>
-    <img src="{{ link }}" alt="Avatar">
+<section class="layout">
+    <div class="header">
+        <h1 class="header_logo1">Random Avatar Generator</h1>
+        <h2 class="header_logo2">CPSC 3720 Project</h2>
+    </div>
+    <div class="leftSide">
+        <form id="form1" method="post" action="/">
+            <input type="submit" class="button1" value="Create" name="action1"/>
+        </form>
+    </div>
+    <div class="body">
+        <div class="container">
+            <img class="avatar" src="{{ link }}"/>
+            <img class="frame" src="static/frame2.png"/>
+        </div>
+    </div>
+    <div class="rightSide">
+        <form id="form2" method="post" action="/">
+            <input type="submit" class="button2" value="Download" name="action2"/>
+            <input type="submit" class="button2" value="Share" name="action3"/>
+        </form>
+    </div>
+    <div class="footer">5</div>
+</section>
 </body>
 </html>

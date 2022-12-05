@@ -1,0 +1,169 @@
+/*html {
+  overflow: hidden;
+}*/
+
+body {
+    background: rgb(0, 0, 0)
+}
+
+.layout {
+  width: 99%;
+  height: 95vh;
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 330px
+    "footer footer footer" auto
+    / auto 440px auto;
+  gap: 8px;
+}
+
+.header {
+    grid-area: header;
+    font-weight: bold;
+    text-align: center;
+    background: url("https://www.shutterstock.com/image-illustration/80s-steam-style-neon-grid-260nw-1932299966.jpg");
+    transition: .3s;
+    max-height: 250px;
+    /*border: 1px pink solid;*/
+}
+
+.header_logo1 {
+    font-family:  'Robot Reavers', sans-serif;
+    margin: 0;
+    padding-top: 80px;
+    font-size: 55px;
+    color: white;
+    text-shadow: 3px 4px rgba(black, .8);
+    transition: .3s;
+}
+
+.header_logo2 {
+    font-family:  'Robotaur', sans-serif;
+    margin: 0;
+    padding-top: 10px;
+    font-size: 17px;
+    color: rgb(168, 168, 168);
+    text-shadow: 3px 4px rgba(black, .8);
+    transition: .3s;
+}
+
+.leftSide {
+    grid-area: leftSide;
+    display: flex;
+    /*border: 1px blue solid;*/
+}
+.body {
+    grid-area: body;
+    position: relative;
+    min-width:435px;
+    min-height:326px;
+    /*border: 1px white solid;*/
+}
+.rightSide {
+    grid-area: rightSide;
+    display: flex;
+    /*border: 1px green solid;*/
+}
+.footer {
+    grid-area: footer;
+    /*border: 1px yellow solid;*/
+}
+
+#form1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: 30px;
+}
+
+#form2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-left: 30px;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+.container {
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.frame {
+    position: relative;
+    top: 0;
+    left: 0;
+    width:435px;
+    height:326px;
+}
+.avatar {
+    position: absolute;
+    top: 9px;
+    left: 67px;
+    /*border: 1px green solid;*/
+}
+
+.button1 {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 23px;
+    font-family: 'Robot Reavers', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #6c0a4e;
+    border: 2px solid rgb(18, 87, 84);
+    border-radius: 45%;
+    box-shadow: 0 7px rgb(14, 7, 54);
+}
+
+.button1:hover {
+    background-color: #52093c
+}
+
+.button1:active {
+    background-color: #52093c;
+    box-shadow: 0 5px rgb(14, 7, 54);
+    transform: translateY(4px);
+}
+
+.button2 {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    padding: 6px 25px;
+    height: 43px;
+    font-size: 23px;
+    font-family: 'Robot Reavers', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(9, 118, 112);
+    border: 2px solid #6c0a4e;
+    border-radius: 0%;
+    box-shadow: 0 7px rgb(14, 7, 54);
+    margin-top: 20px;
+}
+
+.button2:hover {
+    background-color: rgb(11, 89, 85)
+}
+
+.button2:active {
+    background-color: rgb(11, 89, 85);
+    box-shadow: 0 5px rgb(14, 7, 54);
+    transform: translateY(4px);
+}
