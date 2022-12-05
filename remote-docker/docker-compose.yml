@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  beanstalk-flask:
+    image: "simonjhughes/cpsc3720"
+    ports:
+      - "80:5001"
