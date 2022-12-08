@@ -65,8 +65,8 @@ def download_avatar(robohash):
 
 def render_main_page():
     # generate random name
-    response = requests.get('https://randommer.io/api/Name', params=params, headers=headers)
-    name = re.sub(r'\W+', '', str(response.content))
+    apiResponse = requests.get('https://randommer.io/api/Name', params=params, headers=headers)
+    roboName = re.sub(r'\W+', '', str(apiResponse.content))[1:]
     # generate robohash
     # TODO: use cookie as an optional source of hash
     robohash = ''.join(random.choice(string.ascii_letters + string.digits) for a in range(16))
@@ -74,7 +74,7 @@ def render_main_page():
     if not is_cached(robohash, "png"):
         download_avatar(robohash)
     # render main page, pointing to a locally cached avatar
-    return render_template("avatar.html", robohash=robohash, year=datetime.date.today().year, robotName=name)
+    return render_template("avatar.html", robohash=robohash, year=datetime.date.today().year, robotName=roboName)
 
 
 if __name__ == '__main__':
