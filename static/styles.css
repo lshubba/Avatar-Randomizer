@@ -49,6 +49,17 @@ body {
     transition: .3s;
 }
 
+.name {
+    font-family:  'Robot Reavers', sans-serif;
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 3px 4px rgba(black, .8);
+    transition: .3s;
+}
+
 .leftSide {
     grid-area: leftSide;
     display: flex;
@@ -124,8 +135,8 @@ input {
     display: inline-block;
     display: flex;
     align-items: center;
-    padding: 15px 25px;
-    font-size: 23px;
+    padding: 20px 30px;
+    font-size: 35px;
     font-family: 'Robot Reavers', sans-serif;
     cursor: pointer;
     text-align: center;

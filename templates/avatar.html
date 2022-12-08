@@ -24,15 +24,17 @@
         </div>
         <div class="body">
             <div class="container">
+
                 <img class="avatar" src="cache/{{ robohash }}.png"/>
                 <img class="frame" src="static/frame2.png"/>
+                <h3 class="name">{{ robotName }}</h3>
             </div>
         </div>
         <div class="rightSide">
             <form id="form2" method="post" action="/download">
                 <input type="submit" class="button2" value="Download" name="action2"
                        onclick="document.getElementById('download_link').click(); return false;"/>
-                <a href="https://www.shareaholic.com/api/share/?v=1&apitype=1&apikey=1c051ecba369321561b371e5b89056ee&service=twitter&title=Random%20Character%20Generator&link=http://randomavatar.click/ - ${short_link}" target="_blank">Share</a>
+                <a href="https://www.shareaholic.com/api/share/?v=1&apitype=1&apikey=c4673b3fd0d3c4b6c204344f37c9816b&service=twitter&title=Random%20Character%20Generator&link=cache/{{ robohash }}.png"target="_blank">Share</a>
             </form>
         </div>
         <!-- <div class="footer">Copyright &#169; {{ year }} Random Avatar Inc., All rights reserved.</div> -->

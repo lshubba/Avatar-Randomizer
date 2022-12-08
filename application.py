@@ -1,4 +1,3 @@
-from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, redirect, render_template, session, url_for, send_file, request, send_from_directory
 from pathlib import Path
@@ -7,10 +6,19 @@ import random
 import string
 import requests
 import datetime
+import re
 
-# ENV_FILE = find_dotenv()
-# if ENV_FILE:
-#     load_dotenv(ENV_FILE)
+#Random API key: 947bc7666e0242bbaf55f395d41e5e9a
+
+headers = {
+    'accept': '*/*',
+    'X-Api-Key': '947bc7666e0242bbaf55f395d41e5e9a',
+}
+
+params = {
+    'nameType': 'firstname',
+    'quantity': '1',
+}
 
 application = Flask(__name__)
 
@@ -55,6 +63,10 @@ def download_avatar(robohash):
 
 
 def render_main_page():
+    # generate random name
+    response = requests.get('https://randommer.io/api/Name', params=params, headers=headers)
+    name = re.sub(r'\W+', '', str(response.content))[1:]
+    print(name)
     # generate robohash
     # TODO: use cookie as an optional source of hash
     robohash = ''.join(random.choice(string.ascii_letters + string.digits) for a in range(16))
@@ -62,7 +74,7 @@ def render_main_page():
     if not is_cached(robohash, "png"):
         download_avatar(robohash)
     # render main page, pointing to a locally cached avatar
-    return render_template("avatar.html", robohash=robohash, year=datetime.date.today().year)
+    return render_template("avatar.html", robohash=robohash, year=datetime.date.today().year, robotName=name)
 
 
 if __name__ == '__main__':
