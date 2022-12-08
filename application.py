@@ -1,6 +1,7 @@
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, redirect, render_template, session, url_for, send_file, request, send_from_directory
 from pathlib import Path
+import requests
 import python_avatars as pa
 import random
 import string
@@ -65,8 +66,7 @@ def download_avatar(robohash):
 def render_main_page():
     # generate random name
     response = requests.get('https://randommer.io/api/Name', params=params, headers=headers)
-    name = re.sub(r'\W+', '', str(response.content))[1:]
-    print(name)
+    name = re.sub(r'\W+', '', str(response.content))
     # generate robohash
     # TODO: use cookie as an optional source of hash
     robohash = ''.join(random.choice(string.ascii_letters + string.digits) for a in range(16))
