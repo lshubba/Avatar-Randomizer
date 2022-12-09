@@ -14,6 +14,7 @@ import re
 headers = {
     'accept': '*/*',
     'X-Api-Key': '947bc7666e0242bbaf55f395d41e5e9a',
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0',
 }
 
 params = {
