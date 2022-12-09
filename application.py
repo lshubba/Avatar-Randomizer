@@ -21,6 +21,11 @@ params = {
     'quantity': '1',
 }
 
+proxies = {
+  "http": None,
+  "https": None,
+}
+
 application = Flask(__name__)
 
 
@@ -65,7 +70,7 @@ def download_avatar(robohash):
 
 def render_main_page():
     # generate random name
-    apiResponse = requests.get('https://randommer.io/api/Name', params=params, headers=headers)
+    apiResponse = requests.get('https://randommer.io/api/Name', params=params, headers=headers, proxies=proxies)
     print(apiResponse)
     #roboName = re.sub(r'\W+', '', str(apiResponse.content))[1:]
     # generate robohash
