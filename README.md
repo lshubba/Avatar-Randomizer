@@ -1,7 +1,7 @@
-# CPSC-3720 Random Avatar Generator
+#  CPSC-3720 Random Avatar Generator
 ### Project:
 [Website](http://randomavatar.click/)
-### Goal:
+###  Goal:
 Create a website where the user can click a button that will produce a random avatar. Once the avatar has been created then the user will then be able to download its image and/or share the avatar to social media. 
 ### Requirements and User Stories:
 + Non-Functional Requirements: 
