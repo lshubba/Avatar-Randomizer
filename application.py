@@ -8,26 +8,12 @@ import string
 import requests
 import datetime
 import re
+import json
 
 #Random API key: 947bc7666e0242bbaf55f395d41e5e9a
 
-headers = {
-    'accept': '*/*',
-    'X-Api-Key': '947bc7666e0242bbaf55f395d41e5e9a',
-    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0',
-}
-
-params = {
-    'nameType': 'firstname',
-    'quantity': '1',
-}
-
-proxies = {
-  "http": None,
-  "https": None,
-}
-
 application = Flask(__name__)
+
 
 
 @application.route("/", methods=['GET', 'POST'])
@@ -71,8 +57,9 @@ def download_avatar(robohash):
 
 def render_main_page():
     # generate random name
-    apiResponse = requests.get('https://randommer.io/api/Name', params=params, headers=headers, proxies=proxies)
-    print(apiResponse)
+    apiResponse = requests.get('https://randomuser.me/api/')
+    data = json.loads(apiResponse.content)
+    name = data["results"][0]["name"]["first"]
     #roboName = re.sub(r'\W+', '', str(apiResponse.content))[1:]
     # generate robohash
     # TODO: use cookie as an optional source of hash
@@ -81,7 +68,7 @@ def render_main_page():
     if not is_cached(robohash, "png"):
         download_avatar(robohash)
     # render main page, pointing to a locally cached avatar
-    return render_template("avatar.html", robohash=robohash, year=datetime.date.today().year, robotName=apiResponse)
+    return render_template("avatar.html", robohash=robohash, year=datetime.date.today().year, robotName=name)
 
 
 if __name__ == '__main__':
