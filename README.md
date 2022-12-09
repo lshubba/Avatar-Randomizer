@@ -17,6 +17,6 @@ Create a website where the user can click a button that will produce a random av
   - As a user, I want to be able to hit a button that will automatically generate my random avatar, so that I have a straightforward way of spawning a character. 
   - As a user, I want to see a website with an intuitive interface, so that I want to continue using the avatar generator in the future. 
 ### Contributors:
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = SimonJHu/CPSC-3720-Randomizer"/>
+<a href="https://github.com/SimonJHu/CPSC-3720-Randomizer/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SimonJHu/CPSC-3720-Randomizer" />
 </a>
